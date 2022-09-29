@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     async list() {
-      const response = await fetch("http://185.231.154.122/api/courses", {
+      const response = await fetch("https://v1415073.hosted-by-vdsina.ru/api/courses", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

@@ -28,7 +28,7 @@ export default {
     async login(e) {
       e.preventDefault();
       console.log(this.$route.params.auth)
-      const response = await fetch("http://185.231.154.122/api/login/create", {
+      const response = await fetch("https://v1415073.hosted-by-vdsina.ru/api/login/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export default {
       this.setToken(token);
 
       const responseSession = await fetch(
-        "http://185.231.154.122/api/session",
+        "https://v1415073.hosted-by-vdsina.ru/api/session",
         {
           method: "GET",
           headers: {

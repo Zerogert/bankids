@@ -14,7 +14,7 @@
 export default {
   computed:{
     src(){
-      return "http://185.231.154.122/api/courses/"+this.$route.params.id;
+      return "https://v1415073.hosted-by-vdsina.ru/api/courses/"+this.$route.params.id;
     }
   }
 }

@@ -14,7 +14,7 @@ export default {
     },
     methods: {
         async remove() {
-            await fetch("http://185.231.154.122/api/courses/"+this.item.id, {
+            await fetch("https://v1415073.hosted-by-vdsina.ru/api/courses/"+this.item.id, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

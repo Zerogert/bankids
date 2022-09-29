@@ -1,5 +1,6 @@
 <template>
-  <div>
+
+<div>
     <div>
       <nav class="p-1 navbar navbar-expand-lg navbar-dark bg-primary">
         <button
@@ -18,7 +19,7 @@
             <div class="nav-item active">
               <button
                 class="nav-link btn btn-link"
-                @click="$router.push('AddWord')"
+                @click="$router.push('/')"
               >
                 Главная
               </button>
@@ -26,31 +27,33 @@
             <div class="nav-item">
               <button
                 class="nav-link btn btn-link"
-                @click="$router.push('ListWords')"
+                @click="$router.push('courses')"
               >
-                Курсы
+                Уроки
               </button>
             </div>
-
-
-            <div class="nav-item">
-              <button
-                class="nav-link btn btn-link"
-                @click="$router.push('ListWords')"
-              >
-                Игра
-              </button>
-            </div>
-
           </div>
         </div>
       </nav>
     </div>
 
-    <router-view />
+    <div class="container">
+      <router-view />
+    </div>
   </div>
 </template>
 
+<script>
+import { mapGetters } from "vuex";
+export default {
+  async mounted() {
+    this.$router.push("sign-in");
+  },
+  computed: {
+    ...mapGetters(["isLoggedIn"])
+  }
+}
+</script>
 
 <style>
 #app {
@@ -71,5 +74,9 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.container{
+  height:100vh;
 }
 </style>

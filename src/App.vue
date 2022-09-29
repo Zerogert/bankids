@@ -47,10 +47,15 @@
 import { mapGetters } from "vuex";
 export default {
   async mounted() {
-    this.$router.push("sign-in");
+    
   },
   computed: {
     ...mapGetters(["isLoggedIn"])
+  },
+  created(){
+    if(!this.$store.state.token){
+      this.$router.push("sign-in");
+    }
   }
 }
 </script>

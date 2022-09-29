@@ -14,7 +14,7 @@
 export default {
   computed:{
     src(){
-      return "https://localhost:7050/api/courses/"+this.$route.params.id;
+      return "http://185.231.154.122/api/courses/"+this.$route.params.id;
     }
   }
 }

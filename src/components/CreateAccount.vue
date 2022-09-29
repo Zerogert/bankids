@@ -8,9 +8,9 @@
       <input v-model="password" placeholder="Пароль" type="password" />
       <br />
       <br />
-      <button type="submit">Войти</button>
+      <button type="submit">Создать</button>
     </form>
-    <router-link to="/create-account">Создать аккаунт</router-link>
+    
   </div>
 </template>
 
@@ -28,7 +28,7 @@ export default {
     async login(e) {
       e.preventDefault();
       console.log(this.$route.params.auth)
-      const response = await fetch("http://185.231.154.122/api/login", {
+      const response = await fetch("http://185.231.154.122/api/login/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

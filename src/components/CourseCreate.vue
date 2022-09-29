@@ -3,7 +3,10 @@
     <form @submit.prevent="createCourse">
       <input v-model="title" placeholder="Название" />
       <br />
+      <br />
       <input v-model="description" placeholder="Описание" />
+      <br />
+      <br />
       <input
         ref="upload"
         name="file-upload"
@@ -11,6 +14,7 @@
         accept=".html"
         @change="onUploadFiles"
       />
+      <br />
       <br />
       <button type="submit">Создать</button>
       <router-link to="/courses">Отмена</router-link>
@@ -39,7 +43,7 @@ export default {
     },
     async createCourse(e){
         e.preventDefault();
-        const response = await fetch("https://localhost:7050/api/courses", {
+        const response = await fetch("http://185.231.154.122/api/courses", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

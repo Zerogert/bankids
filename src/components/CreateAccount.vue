@@ -8,6 +8,12 @@
       <input v-model="password" placeholder="Пароль" type="password" />
       <br />
       <br />
+      <input v-model="firstName" placeholder="Имя" />
+      <br />
+      <br />
+      <input v-model="lastName" placeholder="Фамилия" />
+      <br />
+      <br />
       <button type="submit">Создать</button>
     </form>
     
@@ -19,8 +25,10 @@ import { mapMutations } from "vuex";
 export default {
   data: () => {
     return {
-      username: "admin",
-      password: "admin",
+      username: "",
+      password: "",
+      firstName:"",
+      lastName:""
     };
   },
   methods: {
@@ -36,6 +44,8 @@ export default {
         body: JSON.stringify({
           login: this.username,
           password: this.password,
+          firstName:this.firstName,
+          lastName:this.lastName
         }),
       });
 

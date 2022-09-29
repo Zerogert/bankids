@@ -59,5 +59,8 @@ export default {
       this.$router.push("/");
     },
   },
+  created(){
+    console.log(this.$route.query);
+  }
 };
 </script>

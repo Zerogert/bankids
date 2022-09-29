@@ -3,7 +3,7 @@ import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { createStore } from 'vuex'
 
-const routes = [  
+const routes = [
   {
     path: '/create-account',
     name: 'create-account',
@@ -12,6 +12,7 @@ const routes = [
   {
     path: '/sign-in',
     name: 'sign-in',
+    props: route => ({ query: route.query.q }),
     component: () => import('./components/SignIn.vue')
   },
   {
@@ -44,7 +45,7 @@ const router = createRouter({
 
 
 const store = createStore({
-  state () {
+  state() {
     return {
       user: null,
       token: null
